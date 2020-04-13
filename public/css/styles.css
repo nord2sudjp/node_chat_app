@@ -169,7 +169,8 @@ button:disabled {
   width: 100%;
   display: block;
   margin-bottom: 5px;
-  max-width: calc(100% - 240px);
+  /*max-width: calc(100% - 240px);*/
+  max-width: 70%;
   clear: both;
 }
 
@@ -201,7 +202,7 @@ button:disabled {
   width: 100px;
   text-align: right;
   top: 40px;
-  left: 90%;
+  left: 95%;
   bottom: 0px;
   font-size: 80%;
   color: white;

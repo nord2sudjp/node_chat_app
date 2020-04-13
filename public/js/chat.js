@@ -51,18 +51,24 @@ const autoscroll = () => {
 };
 
 socket.on("message", (message) => {
-  console.log(message);
+  console.log(username, message.username);
+  if (username.toLowerCase() === message.username.toLowerCase()) {
+    usercat = "myText";
+  } else {
+    usercat = "flText";
+  }
   const html = Mustache.render(messageTemplate, {
     username: message.username,
     message: message.text,
     createdAt: moment(message.createdAt).format("h:mm a"),
+    usercat,
   });
   $messages.insertAdjacentHTML("beforeend", html);
   autoscroll();
 });
 
 socket.on("locationMessage", (message) => {
-  console.log(message);
+  //console.log(message);
   const html = Mustache.render(locationMessageTemplate, {
     username: message.username,
     url: message.url,
